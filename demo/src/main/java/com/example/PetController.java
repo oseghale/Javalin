@@ -45,6 +45,13 @@ public class PetController {
 
         }
         );
+        app.get("/pet/{name}", ctx -> {
+            String petName = ctx.pathParam("name");
+            Pet pet =petService.getPetByName(petName);
+            ctx.json(pet);
+
+        }
+        );
 
         app.start(9001);
 
