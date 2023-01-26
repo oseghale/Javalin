@@ -49,7 +49,10 @@ public class PetController {
             String petName = ctx.pathParam("name");
             Pet pet =petService.getPetByName(petName);
             ctx.json(pet);
-
+        }
+        );
+        app.get("/bad", ctx -> {
+            int bad = 1/0;
         }
         );
 
